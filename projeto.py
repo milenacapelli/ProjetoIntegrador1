@@ -1,4 +1,12 @@
+from mysql.connector import connect
 import os
+
+def obtemConexaoComMySQL (servidor = "mysql.rodolfoi.tech", usuario = "Milena", senha = 12345678, bd = "PIMilena"):
+    if obtemConexaoComMySQL.conexao == None:
+        obtemConexaoComMySQL.conexao = \
+        connect(host = servidor, user = usuario, passwd = senha, database = bd)
+    return obtemConexaoComMySQL.conexao
+obtemConexaoComMySQL.conexao = None
 
 while True:
 

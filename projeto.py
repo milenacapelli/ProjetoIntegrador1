@@ -1,32 +1,68 @@
 from mysql.connector import connect
 import os
 
-def obtemConexaoComMySQL (servidor = "mysql.rodolfoi.tech", usuario = "Milena", senha = 12345678, bd = "PIMilena"):
+def obtemConexaoComMySQL (servidor = "127.0.0.1", usuario = "root", senha = "MilenaCapelli05@", bd = "projetointegrador"):
     if obtemConexaoComMySQL.conexao == None:
         obtemConexaoComMySQL.conexao = \
         connect(host = servidor, user = usuario, passwd = senha, database = bd)
     return obtemConexaoComMySQL.conexao
-obtemConexaoComMySQL.conexao = None
+obtemConexaoComMySQL.conexao = None 
+
+conexao = obtemConexaoComMySQL()
+cursor = conexao.cursor()
 
 while True:
 
     while True:
 
         try:
+            cursor.execute("select mp10 from qualidadedoar;")
+            dados = cursor.fetchall()
+            tamanho = len(dados)
+            somatoria = 0 
+            while len(dados) != 0:
+                somatoria += dados.pop()[0]
+            mp10 = somatoria / tamanho
+            
+            cursor.execute("select mp25 from qualidadedoar;")
+            dados = cursor.fetchall()
+            tamanho = len(dados)
+            somatoria = 0 
+            while len(dados) != 0:
+                somatoria += dados.pop()[0]
+            mp25 = somatoria / tamanho
+           
+            cursor.execute("select o3 from qualidadedoar;")
+            dados = cursor.fetchall()
+            tamanho = len(dados)
+            somatoria = 0 
+            while len(dados) != 0:
+                somatoria += dados.pop()[0]
+            o3 = somatoria / tamanho 
 
-            # Leitua de valores
+            cursor.execute("select co from qualidadedoar;")
+            dados = cursor.fetchall()
+            tamanho = len(dados)
+            somatoria = 0 
+            while len(dados) != 0:
+                somatoria += dados.pop()[0]
+            co = somatoria / tamanho
 
-            mp10 = float(input("\n Digite as Partículas inaláveis (MP10): "))
+            cursor.execute("select no2 from qualidadedoar;")
+            dados = cursor.fetchall()
+            tamanho = len(dados)
+            somatoria = 0 
+            while len(dados) != 0:
+                somatoria += dados.pop()[0]
+            no2 = somatoria / tamanho
 
-            mp25 = float(input("\n Digite as Partículas inaláveis finas (MP2,5): "))
-
-            o3 = float(input("\n Digite o Ozônio(O3): "))
-
-            co = float(input("\n Digite o Monóxido de carbono(CO): "))
-
-            no2 = float(input("\n Digite o Dióxido de nitrogênio(NO2): "))
-
-            so2 = float(input("\n Digite o Dióxido de enxofre(SO2): "))
+            cursor.execute("select so2 from qualidadedoar;")
+            dados = cursor.fetchall()
+            tamanho = len(dados)
+            somatoria = 0 
+            while len(dados) != 0:
+                somatoria += dados.pop()[0]
+            so2 = somatoria / tamanho
 
             os.system('cls')
 

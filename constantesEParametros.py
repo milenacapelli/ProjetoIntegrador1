@@ -13,6 +13,14 @@ class Constantes(Enum):
     MUITO_RUIM = "Muito Ruim"
     PESSIMA = "Pessima"
 
+valorDaQualidade = {
+    "Boa": 0, 
+    "Moderada": 1,
+    "Ruim": 2,
+    "Muito Ruim": 3,
+    "Pessima": 4
+}
+
 intervalosConcentracao = {
     "mp10":[
         [0, 50],

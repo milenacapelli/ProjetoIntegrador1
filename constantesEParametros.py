@@ -260,3 +260,12 @@ tabelaQualidadeAr = {
         },
     }
 }
+
+opcoesDicionario = {
+    "1": "mp10",
+    "2": "mp25",
+    "3": "o3",
+    "4": "co",
+    "5": "no2",
+    "6": "so2"
+}
